@@ -55,7 +55,7 @@ def transfer(web3, privatekey):
 
 
 def main():
-    while True:
+    while keys_list:
         if time.time() <= 1679586600:
             print('Клейм токенов еще не начался')
             return 0
