@@ -55,15 +55,16 @@ def transfer(web3, privatekey):
 
 
 def main():
-    if time.time() <= 1679586600:
-        print('Клейм токенов еще не начался')
-        return 0
-    RPC = YOUR_RPC
-    privatekey = keys_list.pop(0)
-    web3 = Web3(Web3.HTTPProvider(RPC))
-    mint(web3, privatekey)
-    time.sleep(1)
-    transfer(web3, privatekey)
+    while True:
+        if time.time() <= 1679586600:
+            print('Клейм токенов еще не начался')
+            return 0
+        RPC = YOUR_RPC
+        privatekey = keys_list.pop(0)
+        web3 = Web3(Web3.HTTPProvider(RPC))
+        mint(web3, privatekey)
+        time.sleep(1)
+        transfer(web3, privatekey)
 
 
 if __name__ == '__main__':
